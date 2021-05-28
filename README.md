@@ -1,6 +1,6 @@
 # 🥄 Scoop checkver Action
 
-Simple action that does exactly one thing: run `checkver -u` to update the manifests in a [scoop]() bucket. 
+Simple action that does exactly one thing: run `checkver -u` to update the manifests in a [scoop](https://scoop.sh/) bucket. 
 
 No automatic checkout, no limitation to event triggers, no notification support. All this you can provide via separate steps in your workflow -- maximum flexibility.
 
@@ -76,3 +76,5 @@ jobs:
           author_name: 'github-actions[bot]'
           author_email: 'github-actions[bot]@users.noreply.github.com'
 ```
+
+See [foosel/scoop-bucket](https://github.com/foosel/scoop-bucket) for a real life use.
