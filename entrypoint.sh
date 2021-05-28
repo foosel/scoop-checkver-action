@@ -15,7 +15,7 @@ echo "  UPGRADE: $UPGRADE"
 echo "  FORCE:   $FORCE"
 echo ""
 echo "Bucket:"
-echo `ls /bucket`
+echo `ls /github/workspace/$BUCKET`
 echo ""
 
 pwsh /scoop/apps/scoop/current/bin/checkver.ps1 -a "$APPS" -d /github/workspace/$BUCKET $UPGRADE $FORCE
