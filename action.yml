@@ -1,0 +1,26 @@
+name: Scoop Checkver Action
+description: Runs scoop's bin/checkver on a mounted bucket
+author: Gina Häußge
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.apps }}
+    - ${{ inputs.upgrade }}
+    - ${{ inputs.force }}
+branding:
+  icon: package
+  color: green
+inputs:
+  apps:
+    description: The app manifests to run on, comma separated. Defaults to '*''.
+    required: false
+    default: '*'
+  dry:
+    description: Set to any string for a dry-run.
+    required: false
+    default: ''
+  force:
+    description: Set to any string to force upgrade even if not needed. Ignored for dry runs.
+    required: false
+    default: ''
