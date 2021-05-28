@@ -5,6 +5,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
+    - ${{ inputs.bucket }}
     - ${{ inputs.apps }}
     - ${{ inputs.upgrade }}
     - ${{ inputs.force }}
@@ -12,6 +13,9 @@ branding:
   icon: package
   color: green
 inputs:
+  bucket:
+    description: Path to the bucket to run checkver on, relative to the github action workspace.
+    required: true
   apps:
     description: The app manifests to run on, comma separated. Defaults to '*''.
     required: false

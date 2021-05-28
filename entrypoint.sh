@@ -1,12 +1,13 @@
 #!/bin/sh -l
 
-APPS=$1
+BUCKET=$1
+APPS=$2
 UPGRADE='-u'
 FORCE=''
 
 [ -n "$APPS" ] || APPS='*'
-[ -n "$2" ] && UPGRADE=''
-[ -n "$3" ] && FORCE='-f'
+[ -n "$3" ] && UPGRADE=''
+[ -n "$4" ] && FORCE='-f'
 
 echo "Running checkver..."
 echo "  APPS:    $APPS"
@@ -17,4 +18,4 @@ echo "Bucket:"
 echo `ls /bucket`
 echo ""
 
-pwsh /scoop/apps/scoop/current/bin/checkver.ps1 -a "$APPS" -d /bucket $UPGRADE $FORCE
+pwsh /scoop/apps/scoop/current/bin/checkver.ps1 -a "$APPS" -d /github/workspace/$BUCKET $UPGRADE $FORCE
